@@ -1,9 +1,104 @@
-<h2>Club Points</h2>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau des Points - GUDLFT</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .points-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .points-table th,
+        .points-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        .points-table th {
+            background-color: #f8f9fa;
+            font-weight: bold;
+        }
+        .points-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .points-value {
+            font-weight: bold;
+            color: #28a745;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        .info-box {
+            background: #e9ecef;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="{{ url_for('index') }}" class="back-link">← Retour à l'accueil</a>
 
-<ul>
-    {% for club in clubs %}
-    <li>{{ club.name }}: {{ club.points }} points</li>
-    {% endfor %}
-</ul>
+        <h1>Tableau des Points - Clubs</h1>
 
-<p><a href="/">Back to Home</a></p>
+        <div class="info-box">
+            <strong>Information :</strong> Ce tableau affiche les points disponibles pour chaque club.
+            Les points sont utilisés pour réserver des places aux compétitions (1 point = 1 place).
+        </div>
+
+        <table class="points-table">
+            <thead>
+                <tr>
+                    <th>Club</th>
+                    <th>Email</th>
+                    <th>Points Disponibles</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for club in clubs %}
+                <tr>
+                    <td>{{ club['name'] }}</td>
+                    <td>{{ club['email'] }}</td>
+                    <td class="points-value">{{ club['points'] }} points</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="info-box">
+            <strong>Règles :</strong>
+            <ul>
+                <li>Maximum 12 places par compétition par club</li>
+                <li>1 point = 1 place</li>
+                <li>Les points sont déduits lors de la réservation</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
