@@ -34,36 +34,44 @@ def showSummary():
 
 @app.route("/book/<competition>/<club>")
 def book(competition, club):
-    try:
-        foundClub = [c for c in clubs if c["name"] == club][0]
-        foundCompetition = [c for c in competitions if c["name"] == competition][0]
-    except IndexError:
-        flash("Club or Competition not found. Please try again.")
-        return redirect(url_for("index"))
+    foundClub = [c for c in clubs if c["name"] == club]
+    foundCompetition = [c for c in competitions if c["name"] == competition]
 
-    if foundClub and foundCompetition:
-        return render_template(
-            "booking.html", club=foundClub, competition=foundCompetition
-        )
-    else:
-        flash("Something went wrong-please try again")
-        return render_template(
-            "welcome.html", club=foundClub, competitions=competitions
-        )
+    if not foundClub:
+        flash("Club not found.")
+        return render_template("index.html")
+    if not foundCompetition:
+        flash("Competition not found.")
+        return render_template("index.html")
+
+    return render_template(
+        "booking.html", club=foundClub[0], competition=foundCompetition[0]
+    )
 
 
 @app.route("/purchasePlaces", methods=["POST"])
 def purchasePlaces():
-    try:
-        competition = [
-            c for c in competitions if c["name"] == request.form["competition"]
-        ][0]
-        club = [c for c in clubs if c["name"] == request.form["club"]][0]
-    except IndexError:
-        flash("Club or Competition not found. Please try again.")
-        return redirect(url_for("index"))
+    competition_name = request.form["competition"]
+    club_name = request.form["club"]
 
-    placesRequired = int(request.form["places"])
+    foundCompetition = [c for c in competitions if c["name"] == competition_name]
+    foundClub = [c for c in clubs if c["name"] == club_name]
+
+    if not foundCompetition:
+        flash("Competition not found.")
+        return render_template("index.html")
+    if not foundClub:
+        flash("Club not found.")
+        return render_template("index.html")
+
+    competition = foundCompetition[0]
+    club = foundClub[0]
+
+    try:
+        placesRequired = int(request.form["places"])
+    except ValueError:
+        flash("Invalid number of places.")
+        return render_template("index.html")
 
     if placesRequired > int(competition["numberOfPlaces"]):
         flash("Not enough places available in the competition.")
