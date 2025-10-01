@@ -1,0 +1,9 @@
+<h2>Club Points</h2>
+
+<ul>
+    {% for club in clubs %}
+    <li>{{ club.name }}: {{ club.points }} points</li>
+    {% endfor %}
+</ul>
+
+<p><a href="/">Back to Home</a></p>
