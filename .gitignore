@@ -5,3 +5,10 @@ lib
 tests/
 .envrc
 __pycache__
+# Logs
+gudlft.log
+# Documentation locale
+CHANGEMENTS_COMPLETS.md
+# Virtual environment
+venv/
+venv
