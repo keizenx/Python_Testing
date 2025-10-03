@@ -62,7 +62,7 @@
 
             {% if clubs %}
             <div class="clubs-ranking">
-                {% for club in clubs|sort(attribute='points', reverse=True) %}
+                {% for club in clubs %}
                 <div class="club-rank-card card fade-in">
                     <!-- Position et médaille -->
                     <div class="rank-position">
