@@ -1,0 +1,20 @@
+2025-10-03 02:51:05,750 - werkzeug - INFO -  * Restarting with stat
+2025-10-03 02:51:29,041 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2025-10-03 02:51:46,167 - werkzeug - INFO - 127.0.0.1 - - [03/Oct/2025 02:51:46] "[37mGET / HTTP/1.1[0m" 200 -
+2025-10-03 02:51:46,471 - server - ERROR - ERROR 404: Page not found: http://localhost:5000/favicon.ico
+2025-10-03 02:51:46,471 - werkzeug - INFO - 127.0.0.1 - - [03/Oct/2025 02:51:46] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-10-03 02:52:13,752 - werkzeug - INFO - 127.0.0.1 - - [03/Oct/2025 02:52:13] "[37mGET / HTTP/1.1[0m" 200 -
+2025-10-03 02:55:17,925 - werkzeug - INFO - 127.0.0.1 - - [03/Oct/2025 02:55:17] "[37mHEAD /static/css/main.css HTTP/1.1[0m" 200 -
+2025-10-03 02:55:26,305 - werkzeug - INFO - 127.0.0.1 - - [03/Oct/2025 02:55:26] "[37mGET / HTTP/1.1[0m" 200 -
+2025-10-03 02:55:34,726 - werkzeug - INFO - 127.0.0.1 - - [03/Oct/2025 02:55:34] "[37mGET / HTTP/1.1[0m" 200 -
+2025-10-03 02:56:18,492 - werkzeug - INFO - 127.0.0.1 - - [03/Oct/2025 02:56:18] "[37mGET / HTTP/1.1[0m" 200 -
+2025-10-03 02:56:18,759 - werkzeug - INFO - 127.0.0.1 - - [03/Oct/2025 02:56:18] "[37mGET /static/css/main.css HTTP/1.1[0m" 200 -
+2025-10-03 02:56:18,837 - werkzeug - INFO - 127.0.0.1 - - [03/Oct/2025 02:56:18] "[37mGET /static/js/main.js HTTP/1.1[0m" 200 -
+2025-10-03 02:57:44,292 - server - ERROR - ERROR 404: Page not found: http://127.0.0.1:5000/static/css/main.css
+2025-10-03 02:57:44,313 - werkzeug - INFO - 127.0.0.1 - - [03/Oct/2025 02:57:44] "[33mGET /static/css/main.css HTTP/1.1[0m" 404 -
+2025-10-03 02:57:44,332 - server - ERROR - ERROR 404: Page not found: http://127.0.0.1:5000/static/js/main.js
+2025-10-03 02:57:44,333 - werkzeug - INFO - 127.0.0.1 - - [03/Oct/2025 02:57:44] "[33mGET /static/js/main.js HTTP/1.1[0m" 404 -
+2025-10-03 02:58:40,463 - werkzeug - INFO - 127.0.0.1 - - [03/Oct/2025 02:58:40] "[37mGET /static/css/main.css HTTP/1.1[0m" 200 -
+2025-10-03 02:59:35,376 - werkzeug - INFO - 127.0.0.1 - - [03/Oct/2025 02:59:35] "[37mGET /static/css/main.css HTTP/1.1[0m" 200 -
+2025-10-03 02:59:35,379 - werkzeug - INFO - 127.0.0.1 - - [03/Oct/2025 02:59:35] "[37mGET /static/js/main.js HTTP/1.1[0m" 200 -
+2025-10-03 02:59:35,403 - werkzeug - INFO - 127.0.0.1 - - [03/Oct/2025 02:59:35] "[37mGET / HTTP/1.1[0m" 200 -
