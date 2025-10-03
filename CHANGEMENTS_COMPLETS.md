@@ -537,6 +537,12 @@ Page principale: CSS et JS référencés correctement
 - **Lancement simplifié** : `python server.py` maintenant possible
 - **Configuration** : Debug activé, port 5000, host 0.0.0.0
 
+#### **🔗 Liens CSS/JS dans Templates**
+- **index.html** : ✅ CSS + JS ajoutés
+- **welcome.html** : ✅ CSS + JS ajoutés
+- **booking.html** : ✅ CSS + JS ajoutés
+- **points.html** : ✅ Structure HTML complète + CSS/JS
+
 ---
 
 ## 📈 **Métriques d'Amélioration**
