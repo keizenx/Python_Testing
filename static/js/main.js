@@ -301,4 +301,98 @@ function showAlert(message, type = 'info') {
 // Initialiser les fonctionnalités de la page de connexion
 initializeLoginPage();
 
+// Fonctionnalités spécifiques à la page welcome (tableau de bord)
+function initializeWelcomePage() {
+    // Animation des cartes de compétition au scroll
+    const competitionCards = document.querySelectorAll('.competition-card');
+
+    if (competitionCards.length > 0) {
+        // Intersection Observer pour les animations au scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }, index * 100);
+                }
+            });
+        }, observerOptions);
+
+        competitionCards.forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    }
+
+    // Tooltip informatif sur les points
+    const pointsNumber = document.querySelector('.points-number');
+    if (pointsNumber) {
+        pointsNumber.title = 'Ces points peuvent être utilisés pour réserver des places dans les compétitions';
+    }
+
+    // Animation des statuts de compétition
+    const statusElements = document.querySelectorAll('.status');
+    statusElements.forEach(status => {
+        status.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.05)';
+            this.style.transition = 'transform 0.2s ease';
+        });
+
+        status.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+        });
+    });
+
+    // Gestion des boutons de réservation
+    const bookButtons = document.querySelectorAll('a[href*="book"]');
+    bookButtons.forEach(button => {
+        button.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.02)';
+        });
+
+        button.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+        });
+    });
+
+    // Indicateur de chargement pour les actions
+    const actionButtons = document.querySelectorAll('.competition-actions a, .header-actions a');
+    actionButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            if (!this.hasAttribute('disabled')) {
+                // Ajouter un indicateur visuel de chargement
+                const originalText = this.textContent;
+                this.innerHTML = '<span class="loading"></span> Chargement...';
+                this.style.pointerEvents = 'none';
+
+                // Remettre le texte original après un court délai
+                // (la navigation se fera normalement)
+                setTimeout(() => {
+                    if (this.parentNode) { // Vérifier si l'élément existe encore
+                        this.innerHTML = originalText;
+                        this.style.pointerEvents = 'auto';
+                    }
+                }, 1000);
+            }
+        });
+    });
+
+    // Message de bienvenue personnalisé
+    const clubName = document.querySelector('.club-info h1');
+    if (clubName) {
+        console.log(`🏆 Bienvenue sur le tableau de bord ${clubName.textContent.trim()}`);
+    }
+}
+
+// Initialiser les fonctionnalités de la page welcome
+initializeWelcomePage();
+
 console.log('✅ Toutes les fonctionnalités JavaScript initialisées');

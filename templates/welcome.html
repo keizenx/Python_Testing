@@ -1,37 +1,141 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Summary | GUDLFT Registration</title>
+    <title>Tableau de Bord | GUDLFT</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 </head>
 <body>
-        <h2>Welcome, {{club['email']}} </h2><a href="{{url_for('logout')}}">Logout</a>
+    <div class="container">
+        <!-- Header avec informations du club -->
+        <div class="header fade-in">
+            <div class="header-content">
+                <div class="club-info">
+                    <h1>🏟️ {{ club['name'] }}</h1>
+                    <p class="club-email">Connecté en tant que : {{ club['email'] }}</p>
+                </div>
+                <div class="header-actions">
+                    <a href="{{ url_for('displayPoints') }}" class="btn btn-secondary">
+                        📊 Voir tous les points
+                    </a>
+                    <a href="{{ url_for('logout') }}" class="btn btn-danger">
+                        🚪 Déconnexion
+                    </a>
+                </div>
+            </div>
+        </div>
 
-    {% with messages = get_flashed_messages()%}
-    {% if messages %}
-        <ul>
-       {% for message in messages %}
-            <li>{{message}}</li>
-        {% endfor %}
-       </ul>
-    {% endif%}
-    Points available: {{club['points']}}
-    <h3>Competitions:</h3>
-    <ul>
-        {% for comp in competitions%}
-        <li>
-            {{comp['name']}}<br />
-            Date: {{comp['date']}}</br>
-            Number of Places: {{comp['numberOfPlaces']}}
-            {%if comp['numberOfPlaces']|int >0%}
-            <a href="{{ url_for('book',competition=comp['name'],club=club['name']) }}">Book Places</a>
-            {%endif%}
-        </li>
-        <hr />
-        {% endfor %}
-    </ul>
-    {%endwith%}
+        <!-- Carte des points disponibles -->
+        <div class="points-card card fade-in">
+            <div class="points-display">
+                <div class="points-icon">💰</div>
+                <div class="points-info">
+                    <h2>Points Disponibles</h2>
+                    <div class="points-number">{{ club['points'] }}</div>
+                    <p>1 point = 1 place dans une compétition</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Messages flash -->
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div class="messages-container fade-in">
+            {% for message in messages %}
+            <div class="alert alert-success fade-in">
+                <span class="alert-icon">✅</span>
+                {{ message }}
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% endwith %}
+
+        <!-- Section des compétitions -->
+        <div class="competitions-section fade-in">
+            <h2 class="section-title">🏆 Compétitions Disponibles</h2>
+
+            {% if competitions %}
+            <div class="competitions-grid">
+                {% for comp in competitions %}
+                <div class="competition-card card fade-in">
+                    <div class="competition-header">
+                        <h3>{{ comp['name'] }}</h3>
+                        <div class="competition-status">
+                            {% if comp['numberOfPlaces']|int > 0 %}
+                                <span class="status available">🟢 Disponible</span>
+                            {% else %}
+                                <span class="status full">🔴 Complet</span>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <div class="competition-details">
+                        <div class="detail-item">
+                            <span class="detail-label">📅 Date :</span>
+                            <span class="detail-value">{{ comp['date'] }}</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">👥 Places restantes :</span>
+                            <span class="detail-value">{{ comp['numberOfPlaces'] }}</span>
+                        </div>
+                    </div>
+
+                    <div class="competition-actions">
+                        {% if comp['numberOfPlaces']|int > 0 %}
+                        <a href="{{ url_for('book', competition=comp['name'], club=club['name']) }}"
+                           class="btn btn-primary btn-full">
+                            🎫 Réserver des places
+                        </a>
+                        {% else %}
+                        <button class="btn btn-secondary btn-full" disabled>
+                            ❌ Plus de places disponibles
+                        </button>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <div class="no-competitions card fade-in">
+                <div class="no-data">
+                    <div class="no-data-icon">🏆</div>
+                    <h3>Aucune compétition disponible</h3>
+                    <p>Les compétitions seront bientôt annoncées. Revenez plus tard !</p>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+
+        <!-- Section d'aide -->
+        <div class="help-section card fade-in">
+            <h3>💡 Comment réserver des places ?</h3>
+            <div class="help-steps">
+                <div class="help-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Choisir une compétition</h4>
+                        <p>Sélectionnez la compétition qui vous intéresse parmi celles disponibles.</p>
+                    </div>
+                </div>
+                <div class="help-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Réserver vos places</h4>
+                        <p>Indiquez le nombre de places souhaité (maximum 12 par compétition).</p>
+                    </div>
+                </div>
+                <div class="help-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Confirmer</h4>
+                        <p>Validez votre réservation. Les points seront automatiquement déduits.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
