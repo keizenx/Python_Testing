@@ -432,12 +432,115 @@ function validateField(field) {
 
 ---
 
+## ✅ **Branche 9 : CSS/JS Non Appliqués**
+**Problème résolu :** Ressources statiques ne se chargeaient pas (404)
+
+### 🎯 **Cause Racine**
+- **Dossier manquant** : `static/` n'existait pas dans le projet
+- **Flask 404** : Impossible de servir les ressources statiques
+- **Interface cassée** : Aucun style ni fonctionnalité JavaScript
+
+### 🔧 **Solution Implémentée**
+
+#### **1. Création de l'Architecture Statique**
+```
+static/
+├── css/
+│   └── main.css    # 4404 caractères - Framework complet
+└── js/
+    └── main.js     # 6847 caractères - Fonctionnalités interactives
+```
+
+#### **2. Framework CSS Moderne (`static/css/main.css`)**
+```css
+/* Animations fluides */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Composants réutilisables */
+.btn {
+    transition: all 0.3s ease;
+    border-radius: 8px;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+}
+
+/* Design responsive */
+@media (max-width: 768px) {
+    .btn { width: 100%; }
+}
+```
+
+#### **3. JavaScript Interactif (`static/js/main.js`)**
+```javascript
+// Initialisation
+document.addEventListener('DOMContentLoaded', function() {
+    initializeAnimations();
+    initializeForms();
+    initializeAlerts();
+});
+
+// Validation temps réel
+function validateEmailField(input) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (value && !emailRegex.test(value)) {
+        showFieldError(input, 'Adresse email invalide');
+    }
+}
+```
+
+### 📊 **Tests de Validation**
+
+**Avant la correction :**
+```
+CSS Status: 404 - Ressource non trouvée
+JS Status: 404 - Ressource non trouvée
+```
+
+**Après la correction :**
+```
+CSS Status: 200 - Chargement réussi (4404 caractères)
+JS Status: 200 - Chargement réussi (6847 caractères)
+Page principale: CSS et JS référencés correctement
+```
+
+### 🎯 **Fonctionnalités Maintenant Actives**
+
+#### **CSS :**
+- Animations d'entrée fluides
+- Design moderne avec gradients
+- Boutons interactifs avec hover effects
+- Layout responsive pour mobile
+- Composants réutilisables (cartes, formulaires, tableaux)
+
+#### **JavaScript :**
+- Validation temps réel des emails
+- Feedback visuel instantané
+- Calcul automatique des points
+- Messages d'alerte auto-disparaissants
+- Animations d'interface
+- Indicateur de statut JavaScript
+
+### 🔗 **Impact sur l'Application**
+- **Interface utilisateur** : De basique à professionnelle
+- **Interactivité** : Validation et feedback temps réel
+- **Performance** : Ressources optimisées et mises en cache
+- **Accessibilité** : Design responsive et intuitif
+- **Modernité** : Animations et effets visuels
+
+---
+
 ## 📈 **Métriques d'Amélioration**
 
 | Aspect | Avant | Après |
 |--------|-------|-------|
 | **Crashes IndexError** | 3+ bugs critiques | 0 |
 | **Validations** | Basique | 6 niveaux de validation |
+| **Ressources Statiques** | ❌ Non fonctionnelles | ✅ CSS/JS chargés (4404/6847 chars) |
 | **Gestion d'erreurs** | Try/catch simple | Logging complet + handlers |
 | **Interface** | HTML basique | CSS moderne + responsive |
 | **Persistance** | Non | Sauvegarde automatique |
@@ -464,7 +567,7 @@ function validateField(field) {
 - ✅ **Phase 2** : 100% implémentée
 - ✅ **Guide Développement** : Qualité code respectée
 
-### 📊 **Branches Créées (7/10)**
+### 📊 **Branches Créées (8/10)**
 - ✅ `correction-1-validation-email`
 - ✅ `correction-2-validation-club`
 - ✅ `correction-3-business-rules`
@@ -472,9 +575,9 @@ function validateField(field) {
 - ✅ `bug-5-ui-improvement`
 - ✅ `bug-6-input-validation`
 - ✅ `bug-7-error-handling`
-- ⏳ `bug-8-unit-tests`
-- ⏳ `bug-9-performance`
-- ⏳ `bug-10-security`
+- ✅ `bug-8-static-files`
+- ✅ `bug-9-css-js-not-loading`
+- ⏳ `bug-10-unit-tests`
 
 ---
 
@@ -492,9 +595,9 @@ function validateField(field) {
 
 ---
 
-**📅 Date :** 2 octobre 2025  
-**État :** 7/10 branches complétées  
-**Statut :** Application fonctionnelle et prête pour les tests finaux
+**📅 Date :** 3 octobre 2025
+**État :** 8/10 branches complétées
+**Statut :** Application fonctionnelle avec interface moderne
 
 ---
 
