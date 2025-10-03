@@ -9,13 +9,15 @@ Ce document détaille **tous les changements** apportés au projet GUDLFT depuis
 ---
 
 ## ✅ **Branche 1 : Validation Email Inexistant**
-**Fichier modifié :** `server.py` - Fonction `showSummary()`
+**Fichier modifié :** `server.py` - Fonction `showSummary()` + `templates/index.html`
 
 ### 🐛 Problème Résolu
-- **Erreur :** `IndexError` quand un email inexistant était saisi
-- **Impact :** Crash complet de l'application
+- **Erreur :** `IndexError: list index out of range` quand un email inexistant était saisi
+- **Impact :** Crash complet de l'application Flask
 
 ### 🔧 Changements Apportés
+
+#### **1. Correction de la logique serveur (`server.py`)**
 ```python
 # AVANT (Crash)
 club = [club for club in clubs if club["email"] == request.form["email"]][0]
@@ -24,10 +26,29 @@ club = [club for club in clubs if club["email"] == request.form["email"]][0]
 email = request.form["email"]
 club = [club for club in clubs if club["email"] == email]
 if not club:
-    flash("Sorry, that email wasn't found.")
-    return render_template("index.html")
+    # Message d'erreur passé directement au template
+    return render_template("index.html", error_message="Désolé, cet email n'a pas été trouvé dans notre base de données.")
 return render_template("welcome.html", club=club[0], competitions=competitions)
 ```
+
+#### **2. Affichage des erreurs dans le template (`templates/index.html`)**
+```html
+<!-- Messages d'erreur -->
+{% if error_message %}
+<div class="messages-container fade-in">
+    <div class="alert alert-error fade-in">
+        <span class="alert-icon">❌</span>
+        {{ error_message }}
+    </div>
+</div>
+{% endif %}
+```
+
+### 🎯 Résultat
+- ✅ **Plus de crash IndexError** lors de saisie d'email invalide
+- ✅ **Message d'erreur affiché** dans l'interface utilisateur
+- ✅ **Redirection propre** vers la page de connexion
+- ✅ **Expérience utilisateur améliorée** avec feedback clair
 
 ---
 
