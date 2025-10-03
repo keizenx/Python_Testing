@@ -1,18 +1,72 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GUDLFT Registration</title>
+    <title>GUDLFT - Portail d'Inscription</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 </head>
 <body>
-    <h1>Welcome to the GUDLFT Registration Portal!</h1>
-    Please enter your secretary email to continue:
-    <form action="showSummary" method="post">
-        <label for="email">Email:</label>
-        <input type="email" name="email" id=""/>
-        <button type="submit">Enter</button>
-    </form>
+    <div class="container">
+        <!-- Header avec logo et titre -->
+        <div class="header fade-in">
+            <div class="logo">GUDLFT</div>
+            <h1>Portail d'Inscription aux Compétitions</h1>
+            <p class="subtitle">Accès réservé aux secrétaires des clubs</p>
+        </div>
+
+        <!-- Carte principale de connexion -->
+        <div class="card fade-in" style="max-width: 500px; margin: 0 auto;">
+            <div class="card-header">
+                <h2>🔐 Connexion</h2>
+                <p>Saisissez l'adresse email de votre secrétaire</p>
+            </div>
+
+            <!-- Formulaire de connexion -->
+            <form action="showSummary" method="post" class="login-form">
+                <div class="form-group">
+                    <label for="email">📧 Adresse email du secrétaire</label>
+                    <input type="email"
+                           name="email"
+                           id="email"
+                           required
+                           placeholder="exemple@club.com"
+                           autocomplete="email"
+                           class="form-input">
+                    <small class="form-help">Utilisez l'adresse email officielle de votre club</small>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-full">
+                    🚀 Accéder à mon compte
+                </button>
+            </form>
+
+            <!-- Informations supplémentaires -->
+            <div class="info-section">
+                <h3>ℹ️ À propos de GUDLFT</h3>
+                <ul class="features-list">
+                    <li>✅ Réservation de places pour les compétitions</li>
+                    <li>✅ Gestion des points de votre club</li>
+                    <li>✅ Suivi des inscriptions en temps réel</li>
+                    <li>✅ Accès sécurisé et confidentiel</li>
+                </ul>
+            </div>
+
+            <!-- Lien vers les points publics -->
+            <div class="public-link">
+                <a href="{{ url_for('displayPoints') }}" class="btn btn-secondary">
+                    📊 Voir les points de tous les clubs
+                </a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2025 GUDLFT - Système de Réservation Régional</p>
+            <p>Pour toute question, contactez l'administrateur de votre compétition</p>
+        </footer>
+    </div>
+
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
 </html>

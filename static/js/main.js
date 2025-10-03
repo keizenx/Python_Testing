@@ -202,4 +202,103 @@ function updatePointsCalculation() {
 // Initialiser le calcul des points
 updatePointsCalculation();
 
+// Fonctionnalités spécifiques à la page de connexion
+function initializeLoginPage() {
+    const emailInput = document.getElementById('email');
+    const submitButton = document.querySelector('.btn-primary');
+
+    if (emailInput && submitButton) {
+        // Validation en temps réel pour la page de connexion
+        emailInput.addEventListener('input', function() {
+            const email = this.value.trim();
+            const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+            if (email) {
+                if (isValid) {
+                    this.style.borderColor = '#28a745';
+                    this.style.boxShadow = '0 0 0 3px rgba(40, 167, 69, 0.1)';
+                    submitButton.disabled = false;
+                    submitButton.textContent = ' Accéder à mon compte';
+                } else {
+                    this.style.borderColor = '#dc3545';
+                    this.style.boxShadow = '0 0 0 3px rgba(220, 53, 69, 0.1)';
+                    submitButton.disabled = true;
+                    submitButton.textContent = '❌ Adresse email invalide';
+                }
+            } else {
+                this.style.borderColor = '#e9ecef';
+                this.style.boxShadow = 'none';
+                submitButton.disabled = false;
+                submitButton.textContent = ' Accéder à mon compte';
+            }
+        });
+
+        // Gestionnaire de soumission du formulaire
+        const loginForm = document.querySelector('.login-form');
+        if (loginForm) {
+            loginForm.addEventListener('submit', function(e) {
+                const email = emailInput.value.trim();
+                const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+                if (!isValid) {
+                    e.preventDefault();
+                    showAlert('Veuillez saisir une adresse email valide.', 'error');
+                    emailInput.focus();
+                    return false;
+                }
+
+                // Animation de chargement
+                submitButton.disabled = true;
+                submitButton.innerHTML = '<span class="loading"></span> Connexion en cours...';
+            });
+        }
+    }
+}
+
+// Fonction pour afficher des alertes temporaires
+function showAlert(message, type = 'info') {
+    // Supprimer les alertes existantes
+    const existingAlerts = document.querySelectorAll('.alert-temp');
+    existingAlerts.forEach(alert => alert.remove());
+
+    // Créer la nouvelle alerte
+    const alertDiv = document.createElement('div');
+    alertDiv.className = `alert alert-${type} alert-temp fade-in`;
+    alertDiv.innerHTML = message;
+    alertDiv.style.position = 'fixed';
+    alertDiv.style.top = '20px';
+    alertDiv.style.right = '20px';
+    alertDiv.style.zIndex = '10000';
+    alertDiv.style.maxWidth = '400px';
+
+    // Ajouter un bouton de fermeture
+    const closeBtn = document.createElement('span');
+    closeBtn.innerHTML = ' ×';
+    closeBtn.style.float = 'right';
+    closeBtn.style.cursor = 'pointer';
+    closeBtn.style.fontWeight = 'bold';
+    closeBtn.onclick = function() {
+        alertDiv.style.display = 'none';
+    };
+    alertDiv.insertBefore(closeBtn, alertDiv.firstChild);
+
+    document.body.appendChild(alertDiv);
+
+    // Auto-disparition après 5 secondes
+    setTimeout(() => {
+        if (alertDiv.parentNode) {
+            alertDiv.style.transition = 'opacity 0.5s ease';
+            alertDiv.style.opacity = '0';
+            setTimeout(() => {
+                if (alertDiv.parentNode) {
+                    alertDiv.parentNode.removeChild(alertDiv);
+                }
+            }, 500);
+        }
+    }, 5000);
+}
+
+// Initialiser les fonctionnalités de la page de connexion
+initializeLoginPage();
+
 console.log('✅ Toutes les fonctionnalités JavaScript initialisées');
