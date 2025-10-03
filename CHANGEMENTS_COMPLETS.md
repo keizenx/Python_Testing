@@ -532,6 +532,11 @@ Page principale: CSS et JS référencés correctement
 - **Accessibilité** : Design responsive et intuitif
 - **Modernité** : Animations et effets visuels
 
+#### **🔧 Bonus : Section de Lancement Flask**
+- **Fix ajouté** : `if __name__ == "__main__":` manquant
+- **Lancement simplifié** : `python server.py` maintenant possible
+- **Configuration** : Debug activé, port 5000, host 0.0.0.0
+
 ---
 
 ## 📈 **Métriques d'Amélioration**
