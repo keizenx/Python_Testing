@@ -1,20 +1,178 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Club Points | GUDLFT</title>
+    <title>Classement des Points | GUDLFT</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 </head>
 <body>
-    <h2>Club Points</h2>
+    <div class="container">
+        <!-- Header avec titre accrocheur -->
+        <div class="header fade-in">
+            <div class="header-content">
+                <div class="page-icon">
+                    <span class="icon-large">🏆</span>
+                </div>
+                <div class="page-info">
+                    <h1>Classement des Points</h1>
+                    <p class="page-subtitle">Points disponibles de tous les clubs affiliés</p>
+                </div>
+            </div>
+        </div>
 
-    <ul>
-        {% for club in clubs %}
-        <li>{{ club.name }}: {{ club.points }} points</li>
-        {% endfor %}
-    </ul>
+        <!-- Statistiques générales -->
+        <div class="stats-overview card fade-in">
+            <h2>📊 Vue d'ensemble</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-icon">🏟️</div>
+                    <div class="stat-content">
+                        <h3>{{ clubs_count }}</h3>
+                        <p>Clubs inscrits</p>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">💰</div>
+                    <div class="stat-content">
+                        <h3>{{ total_points }}</h3>
+                        <p>Points totaux</p>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">🥇</div>
+                    <div class="stat-content">
+                        <h3>{{ max_points }}</h3>
+                        <p>Record points</p>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">📈</div>
+                    <div class="stat-content">
+                        <h3>{{ avg_points }}</h3>
+                        <p>Moyenne par club</p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    <p><a href="/">Back to Home</a></p>
+        <!-- Classement des clubs -->
+        <div class="ranking-section card fade-in">
+            <h2>🏅 Classement des Clubs</h2>
+
+            {% if clubs %}
+            <div class="clubs-ranking">
+                {% for club in clubs|sort(attribute='points', reverse=True) %}
+                <div class="club-rank-card card fade-in">
+                    <!-- Position et médaille -->
+                    <div class="rank-position">
+                        {% if loop.index == 1 %}
+                            <span class="medal gold">🥇</span>
+                        {% elif loop.index == 2 %}
+                            <span class="medal silver">🥈</span>
+                        {% elif loop.index == 3 %}
+                            <span class="medal bronze">🥉</span>
+                        {% else %}
+                            <span class="position-number">#{{ loop.index }}</span>
+                        {% endif %}
+                    </div>
+
+                    <!-- Informations du club -->
+                    <div class="club-info">
+                        <h3 class="club-name">{{ club.name }}</h3>
+                        <div class="club-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Points disponibles :</span>
+                                <span class="points-value">{{ club.points }}</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Places réservables :</span>
+                                <span class="places-value">{{ club.points }}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Barre de progression visuelle -->
+                    <div class="progress-section">
+                        <div class="progress-bar">
+                            {% set percentage = (club.points|int / max_points * 100)|round if max_points > 0 else 0 %}
+                            <div class="progress-fill" style="width: {{ percentage }}%"></div>
+                        </div>
+                        <span class="progress-text">{{ percentage }}%</span>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <div class="no-data">
+                <div class="no-data-icon">🏆</div>
+                <h3>Aucun club trouvé</h3>
+                <p>Les données des clubs ne sont pas disponibles pour le moment.</p>
+            </div>
+            {% endif %}
+        </div>
+
+        <!-- Section d'information -->
+        <div class="info-section card fade-in">
+            <h3>💡 À propos des points</h3>
+            <div class="info-content">
+                <div class="info-item">
+                    <div class="info-icon">🎯</div>
+                    <div class="info-text">
+                        <h4>Système de points</h4>
+                        <p>Chaque club accumule des points en organisant des compétitions. Ces points permettent de réserver des places pour les futures compétitions.</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">⚖️</div>
+                    <div class="info-text">
+                        <h4>Équité</h4>
+                        <p>Le système de points garantit l'équité entre tous les clubs participants, favorisant la participation active.</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">🔄</div>
+                    <div class="info-text">
+                        <h4>Mise à jour</h4>
+                        <p>Les points sont mis à jour automatiquement après chaque compétition organisée par votre club.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bouton de retour -->
+        <div class="navigation-section fade-in">
+            <a href="/" class="btn btn-primary btn-large">
+                🏠 Retour à l'accueil
+            </a>
+        </div>
+    </div>
+
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script>
+        // Fonctionnalités spécifiques à la page des points
+        document.addEventListener('DOMContentLoaded', function() {
+            initializePointsPage();
+        });
+
+        function initializePointsPage() {
+            // Animation des cartes de classement avec délai échelonné
+            const rankCards = document.querySelectorAll('.club-rank-card');
+            rankCards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0) scale(1)';
+                }, index * 150);
+            });
+
+            // Tooltip sur les barres de progression
+            const progressBars = document.querySelectorAll('.progress-fill');
+            progressBars.forEach(bar => {
+                bar.parentElement.title = `Progression: ${bar.style.width}`;
+            });
+
+            console.log('🏆 Page des points initialisée avec', rankCards.length, 'clubs');
+        }
+    </script>
 </body>
 </html>

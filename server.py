@@ -89,7 +89,23 @@ def logout():
 
 @app.route("/points")
 def displayPoints():
-    return render_template("points.html", clubs=clubs)
+    # Calculer les statistiques côté Python pour éviter les problèmes Jinja2
+    clubs_count = len(clubs)
+    total_points = sum(int(club["points"]) for club in clubs)
+    max_points = max(int(club["points"]) for club in clubs) if clubs else 0
+    avg_points = round(total_points / clubs_count, 1) if clubs_count > 0 else 0
+
+    # Trier les clubs par points décroissants pour le classement
+    sorted_clubs = sorted(clubs, key=lambda x: int(x["points"]), reverse=True)
+
+    return render_template(
+        "points.html",
+        clubs=sorted_clubs,
+        clubs_count=clubs_count,
+        total_points=total_points,
+        max_points=max_points,
+        avg_points=avg_points,
+    )
 
 
 if __name__ == "__main__":
