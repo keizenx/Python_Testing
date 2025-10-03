@@ -15,6 +15,16 @@
             <p class="subtitle">Accès réservé aux secrétaires des clubs</p>
         </div>
 
+        <!-- Messages d'erreur -->
+        {% if error_message %}
+        <div class="messages-container fade-in">
+            <div class="alert alert-error fade-in">
+                <span class="alert-icon">❌</span>
+                {{ error_message }}
+            </div>
+        </div>
+        {% endif %}
+
         <!-- Carte principale de connexion -->
         <div class="card fade-in" style="max-width: 500px; margin: 0 auto;">
             <div class="card-header">
