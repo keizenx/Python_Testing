@@ -616,46 +616,291 @@ body {
     line-height: 1.5;
 }
 
-/* Responsive */
+/* Styles spécifiques à la page de réservation (booking.html) */
+
+.nav-section {
+    margin-bottom: 2rem;
+}
+
+.back-btn {
+    font-size: 0.9rem;
+    padding: 0.75rem 1.5rem;
+}
+
+.back-btn:hover {
+    transform: translateX(-2px);
+}
+
+/* Hero section de la compétition */
+.competition-hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    margin-bottom: 2rem;
+    padding: 2rem;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.competition-badge {
+    flex-shrink: 0;
+}
+
+.badge-icon {
+    font-size: 4rem;
+    opacity: 0.9;
+}
+
+.competition-info h1 {
+    margin: 0 0 0.5rem 0;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.competition-subtitle {
+    margin: 0;
+    opacity: 0.9;
+    font-size: 1.1rem;
+}
+
+/* Résumé de la compétition */
+.competition-summary {
+    margin-bottom: 2rem;
+}
+
+.competition-summary h2 {
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #333;
+}
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.summary-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+}
+
+.summary-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.summary-content h3 {
+    margin: 0 0 0.5rem 0;
+    color: #333;
+    font-size: 1rem;
+}
+
+.summary-content p {
+    margin: 0;
+    color: #666;
+    font-weight: 500;
+}
+
+.places-available {
+    color: #28a745 !important;
+    font-weight: bold !important;
+}
+
+.points-balance {
+    color: #667eea !important;
+    font-weight: bold !important;
+}
+
+/* Formulaire de réservation */
+.booking-form {
+    margin-bottom: 2rem;
+}
+
+.booking-form h2 {
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #333;
+}
+
+.input-group {
+    position: relative;
+}
+
+.input-info {
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+.input-info small {
+    color: #666;
+    font-style: italic;
+}
+
+/* Section de calcul */
+.calculation-section {
+    margin: 2rem 0;
+}
+
+.calculation-card {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border: 2px solid #dee2e6;
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+.calculation-card h3 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #333;
+}
+
+.calculation-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.calc-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+}
+
+.calc-label {
+    font-weight: 500;
+    color: #666;
+}
+
+.calc-value {
+    font-weight: bold;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+/* Messages d'avertissement */
+.warning-message {
+    margin: 1rem 0;
+}
+
+/* Actions du formulaire */
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.form-actions .btn {
+    min-width: 160px;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+}
+
+/* Section d'information */
+.info-section {
+    background: #f8f9fa;
+    margin-top: 3rem;
+}
+
+.info-section h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.info-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.info-number {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.info-content h4 {
+    margin: 0 0 0.5rem 0;
+    color: #333;
+}
+
+.info-content p {
+    margin: 0;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Responsive pour la page de réservation */
 @media (max-width: 768px) {
-    .header-content {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .header-actions {
-        width: 100%;
-        justify-content: stretch;
-    }
-
-    .header-actions .btn {
-        flex: 1;
-    }
-
-    .points-display {
+    .hero-content {
         flex-direction: column;
         text-align: center;
         gap: 1rem;
     }
 
-    .points-number {
-        font-size: 2.5rem;
+    .competition-info h1 {
+        font-size: 2rem;
     }
 
-    .competitions-grid {
+    .badge-icon {
+        font-size: 3rem;
+    }
+
+    .summary-grid {
         grid-template-columns: 1fr;
     }
 
-    .help-steps {
+    .calculation-details {
         grid-template-columns: 1fr;
     }
 
-    .help-step {
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .form-actions .btn {
+        width: 100%;
+    }
+
+    .info-list {
+        grid-template-columns: 1fr;
+    }
+
+    .info-item {
         flex-direction: column;
         text-align: center;
     }
 
-    .step-number {
+    .info-number {
         align-self: center;
     }
 }

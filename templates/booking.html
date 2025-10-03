@@ -1,19 +1,251 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Booking for {{competition['name']}} || GUDLFT</title>
+    <title>Réservation - {{competition['name']}} | GUDLFT</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 </head>
 <body>
-    <h2>{{competition['name']}}</h2>
-    Places available: {{competition['numberOfPlaces']}}
-    <form action="/purchasePlaces" method="post">
-        <input type="hidden" name="club" value="{{club['name']}}">
-        <input type="hidden" name="competition" value="{{competition['name']}}">
-        <label for="places">How many places?</label><input type="number" name="places" id=""/>
-        <button type="submit">Book</button>
-    </form>
+    <div class="container">
+        <!-- Navigation -->
+        <div class="nav-section">
+            <a href="{{ url_for('showSummary') }}" class="btn btn-secondary back-btn">
+                ← Retour au tableau de bord
+            </a>
+        </div>
+
+        <!-- Header de la compétition -->
+        <div class="competition-hero card fade-in">
+            <div class="hero-content">
+                <div class="competition-badge">
+                    <span class="badge-icon">🏆</span>
+                </div>
+                <div class="competition-info">
+                    <h1>{{ competition['name'] }}</h1>
+                    <p class="competition-subtitle">Réservation de places pour votre club</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Informations détaillées -->
+        <div class="competition-summary card fade-in">
+            <h2>📋 Détails de la compétition</h2>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="summary-icon">📅</div>
+                    <div class="summary-content">
+                        <h3>Date</h3>
+                        <p>{{ competition['date'] }}</p>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon">👥</div>
+                    <div class="summary-content">
+                        <h3>Places disponibles</h3>
+                        <p class="places-available">{{ competition['numberOfPlaces'] }}</p>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon">🏟️</div>
+                    <div class="summary-content">
+                        <h3>Votre club</h3>
+                        <p>{{ club['name'] }}</p>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon">💰</div>
+                    <div class="summary-content">
+                        <h3>Vos points</h3>
+                        <p class="points-balance">{{ club['points'] }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Formulaire de réservation -->
+        <div class="booking-form card fade-in">
+            <h2>🎫 Réserver des places</h2>
+
+            <form action="/purchasePlaces" method="post" id="bookingForm">
+                <input type="hidden" name="club" value="{{ club['name'] }}">
+                <input type="hidden" name="competition" value="{{ competition['name'] }}">
+
+                <div class="form-group">
+                    <label for="places">Nombre de places à réserver</label>
+                    <div class="input-group">
+                        <input type="number"
+                               name="places"
+                               id="places"
+                               min="1"
+                               max="{{ competition['numberOfPlaces']|int if competition['numberOfPlaces']|int <= 12 else 12 }}"
+                               required
+                               placeholder="Ex: 3"
+                               class="form-input">
+                        <div class="input-info">
+                            <small>Maximum 12 places par réservation</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Calcul automatique -->
+                <div class="calculation-section" id="calculationSection" style="display: none;">
+                    <div class="calculation-card">
+                        <h3>🧮 Récapitulatif</h3>
+                        <div class="calculation-details">
+                            <div class="calc-item">
+                                <span class="calc-label">Places demandées :</span>
+                                <span class="calc-value" id="placesRequested">0</span>
+                            </div>
+                            <div class="calc-item">
+                                <span class="calc-label">Points nécessaires :</span>
+                                <span class="calc-value" id="pointsNeeded">0</span>
+                            </div>
+                            <div class="calc-item">
+                                <span class="calc-label">Points restants après :</span>
+                                <span class="calc-value" id="pointsRemaining">{{ club['points'] }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Message d'avertissement -->
+                <div class="warning-message" id="warningMessage" style="display: none;">
+                    <div class="alert alert-warning">
+                        <span class="alert-icon">⚠️</span>
+                        <strong>Attention :</strong> Vous n'avez pas assez de points pour cette réservation.
+                    </div>
+                </div>
+
+                <!-- Boutons d'action -->
+                <div class="form-actions">
+                    <button type="button"
+                            class="btn btn-secondary"
+                            onclick="window.history.back()">
+                        ❌ Annuler
+                    </button>
+                    <button type="submit"
+                            class="btn btn-primary"
+                            id="submitBtn"
+                            disabled>
+                        🎫 Confirmer la réservation
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Section d'information -->
+        <div class="info-section card fade-in">
+            <h3>💡 Informations importantes</h3>
+            <div class="info-list">
+                <div class="info-item">
+                    <div class="info-number">1</div>
+                    <div class="info-content">
+                        <h4>Règles de réservation</h4>
+                        <p>Maximum 12 places par compétition pour garantir l'équité entre les clubs.</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-number">2</div>
+                    <div class="info-content">
+                        <h4>Système de points</h4>
+                        <p>1 point = 1 place. Les points sont automatiquement déduits après confirmation.</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-number">3</div>
+                    <div class="info-content">
+                        <h4>Confirmation</h4>
+                        <p>Votre réservation sera confirmée immédiatement après validation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script>
+        // Fonctionnalités spécifiques à la page de réservation
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeBookingPage();
+        });
+
+        function initializeBookingPage() {
+            const placesInput = document.getElementById('places');
+            const calculationSection = document.getElementById('calculationSection');
+            const warningMessage = document.getElementById('warningMessage');
+            const submitBtn = document.getElementById('submitBtn');
+
+            const maxPlaces = Math.min({{ competition['numberOfPlaces']|int }}, 12);
+            const availablePoints = {{ club['points']|int }};
+
+            placesInput.max = maxPlaces;
+
+            placesInput.addEventListener('input', function() {
+                const placesRequested = parseInt(this.value) || 0;
+
+                if (placesRequested > 0) {
+                    calculationSection.style.display = 'block';
+
+                    const pointsNeeded = placesRequested;
+                    const pointsRemaining = availablePoints - pointsNeeded;
+
+                    document.getElementById('placesRequested').textContent = placesRequested;
+                    document.getElementById('pointsNeeded').textContent = pointsNeeded;
+                    document.getElementById('pointsRemaining').textContent = pointsRemaining;
+
+                    // Vérification des points suffisants
+                    if (pointsRemaining < 0) {
+                        warningMessage.style.display = 'block';
+                        submitBtn.disabled = true;
+                        submitBtn.textContent = '❌ Points insuffisants';
+                        submitBtn.className = 'btn btn-danger';
+                    } else {
+                        warningMessage.style.display = 'none';
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = '🎫 Confirmer la réservation';
+                        submitBtn.className = 'btn btn-primary';
+                    }
+
+                    // Vérification du maximum de places
+                    if (placesRequested > maxPlaces) {
+                        this.value = maxPlaces;
+                        showAlert(`Maximum ${maxPlaces} places autorisées.`, 'warning');
+                    }
+
+                } else {
+                    calculationSection.style.display = 'none';
+                    warningMessage.style.display = 'none';
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = '🎫 Confirmer la réservation';
+                    submitBtn.className = 'btn btn-primary';
+                }
+            });
+
+            // Validation du formulaire
+            document.getElementById('bookingForm').addEventListener('submit', function(e) {
+                const places = parseInt(placesInput.value) || 0;
+
+                if (places <= 0) {
+                    e.preventDefault();
+                    showAlert('Veuillez saisir un nombre de places valide.', 'error');
+                    placesInput.focus();
+                    return false;
+                }
+
+                if (places > availablePoints) {
+                    e.preventDefault();
+                    showAlert('Vous n\'avez pas assez de points pour cette réservation.', 'error');
+                    return false;
+                }
+
+                // Animation de soumission
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<span class="loading"></span> Réservation en cours...';
+            });
+
+            console.log('🎫 Page de réservation initialisée pour {{ competition["name"] }}');
+        }
+    </script>
 </body>
 </html>
