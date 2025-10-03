@@ -52,6 +52,40 @@ return render_template("welcome.html", club=club[0], competitions=competitions)
 
 ---
 
+## ✅ **Branche 14 : Correction TypeError Tri Points**
+**Fichier modifié :** `templates/points.html`
+
+### 🐛 Problème Résolu
+- **Erreur :** `TypeError: '<' not supported between instances of 'str' and 'int'`
+- **Impact :** Crash complet de la page `/points`
+- **Cause :** Tri Jinja2 avec `clubs|sort(attribute='points')` où les points sont des chaînes
+
+### 🔧 Changements Apportés
+
+#### **1. Suppression du tri dans le template**
+```html
+<!-- AVANT (Erreur) -->
+{% for club in clubs|sort(attribute='points', reverse=True) %}
+
+<!-- APRÈS (Tri côté Python) -->
+{% for club in clubs %}
+```
+
+#### **2. Tri déjà effectué côté Python**
+```python
+# Dans displayPoints() - Tri déjà présent
+sorted_clubs = sorted(clubs, key=lambda x: int(x["points"]), reverse=True)
+return render_template("points.html", clubs=sorted_clubs, ...)
+```
+
+### 🎯 Résultat
+- ✅ **Plus d'erreur TypeError** lors de l'accès à `/points`
+- ✅ **Tri correct** des clubs par points décroissants
+- ✅ **Performance améliorée** (tri côté serveur au lieu du client)
+- ✅ **Code plus propre** (séparation logique Python/template)
+
+---
+
 ## ✅ **Branche 2 : Validation Club/Compétition Inexistant**
 **Fichier modifié :** `server.py` - Fonction `book()`
 
