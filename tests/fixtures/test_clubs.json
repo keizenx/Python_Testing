@@ -1,0 +1,20 @@
+{
+    "clubs": [
+        {
+            "name": "Test Club Alpha",
+            "email": "alpha@testclub.com",
+            "points": "20"
+        },
+        {
+            "name": "Test Club Beta",
+            "email": "beta@testclub.com",
+            "points": "5"
+        },
+        {
+            "name": "Test Club Gamma",
+            "email": "gamma@testclub.com",
+            "points": "15"
+        }
+    ]
+}
+

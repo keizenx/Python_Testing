@@ -1,0 +1,505 @@
+2025-10-20 11:02:13 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:13 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:14 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:14 - [INFO] - Flask test client created
+2025-10-20 11:02:14 - [INFO] - Step 1: Login successful
+2025-10-20 11:02:14 - [INFO] - Step 2: Booking page loaded
+2025-10-20 11:02:14 - [INFO] - Step 3: Purchase completed
+2025-10-20 11:02:14 - [INFO] - Step 4: Points page viewed
+2025-10-20 11:02:14 - [INFO] - Step 5: Logout successful
+2025-10-20 11:02:14 - [INFO] - test_complete_booking_workflow PASSED
+2025-10-20 11:02:14 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:14 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:14 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:14 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:14 - [INFO] - Flask test client created
+2025-10-20 11:02:14 - [INFO] - Secrétaire connecté avec succès
+2025-10-20 11:02:14 - [INFO] - Nombre d'inscriptions disponibles affiché
+2025-10-20 11:02:14 - [INFO] - Message de confirmation affiché et points déduits
+2025-10-20 11:02:14 - [INFO] - test_secretary_journey_phase1 PASSED
+2025-10-20 11:02:14 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:14 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:14 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:14 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:14 - [INFO] - Flask test client created
+2025-10-20 11:02:14 - [INFO] - Première réservation effectuée
+2025-10-20 11:02:14 - [INFO] - Deuxième réservation effectuée
+2025-10-20 11:02:14 - [INFO] - test_multiple_bookings_same_club PASSED
+2025-10-20 11:02:14 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:14 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:14 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:14 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:14 - [INFO] - Flask test client created
+2025-10-20 11:02:14 - [INFO] - test_max_12_places_per_club_single_booking PASSED
+2025-10-20 11:02:14 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:14 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:14 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:14 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:14 - [INFO] - Flask test client created
+2025-10-20 11:02:14 - [INFO] - Surréservation correctement empêchée
+2025-10-20 11:02:14 - [INFO] - test_no_overbooking PASSED
+2025-10-20 11:02:14 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:14 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:14 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:14 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:14 - [INFO] - Flask test client created
+2025-10-20 11:02:14 - [INFO] - 3 points déduits correctement (1 point par place)
+2025-10-20 11:02:14 - [INFO] - test_points_deduction_one_point_per_place PASSED
+2025-10-20 11:02:14 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:14 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:14 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:14 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:14 - [INFO] - Flask test client created
+2025-10-20 11:02:14 - [INFO] - Message d'erreur pour points insuffisants affiché
+2025-10-20 11:02:14 - [INFO] - test_insufficient_points_error_message PASSED
+2025-10-20 11:02:14 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:14 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:14 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:14 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:14 - [INFO] - Flask test client created
+2025-10-20 11:02:14 - [INFO] - Message d'erreur pour compétition complète affiché
+2025-10-20 11:02:14 - [INFO] - test_competition_full_error_message PASSED
+2025-10-20 11:02:14 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:14 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:14 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:14 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:14 - [INFO] - Flask test client created
+2025-10-20 11:02:14 - [INFO] - Tableau des points accessible publiquement
+2025-10-20 11:02:14 - [INFO] - test_public_points_board_accessible PASSED
+2025-10-20 11:02:14 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:14 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:14 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:14 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:14 - [INFO] - Flask test client created
+2025-10-20 11:02:14 - [INFO] - Tous les clubs affichés sur le tableau des points
+2025-10-20 11:02:14 - [INFO] - test_points_board_shows_all_clubs PASSED
+2025-10-20 11:02:14 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:14 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:14 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:14 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:14 - [INFO] - Flask test client created
+2025-10-20 11:02:14 - [INFO] - Tableau des points en lecture seule
+2025-10-20 11:02:14 - [INFO] - test_points_board_read_only PASSED
+2025-10-20 11:02:14 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:14 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:14 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:14 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:14 - [INFO] - Flask test client created
+2025-10-20 11:02:14 - [INFO] - Liste des compétitions chargée en 0.03s (< 5s)
+2025-10-20 11:02:14 - [INFO] - test_competitions_list_load_time PASSED
+2025-10-20 11:02:14 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:14 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:14 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:14 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:14 - [INFO] - Flask test client created
+2025-10-20 11:02:14 - [INFO] - Points mis à jour en 0.02s (< 2s)
+2025-10-20 11:02:14 - [INFO] - test_points_update_time PASSED
+2025-10-20 11:02:14 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:14 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:14 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:14 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:14 - [INFO] - Flask test client created
+2025-10-20 11:02:14 - [INFO] - Page des points chargée en 0.02s
+2025-10-20 11:02:14 - [INFO] - test_points_page_load_time PASSED
+2025-10-20 11:02:14 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:14 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:14 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:14 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:14 - [INFO] - Flask test client created
+2025-10-20 11:02:14 - [INFO] - Réservation correctement refusée quand plus de places
+2025-10-20 11:02:14 - [INFO] - test_booking_with_zero_available_places PASSED
+2025-10-20 11:02:14 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:14 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:14 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:14 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:14 - [INFO] - Flask test client created
+2025-10-20 11:02:14 - [INFO] - Nombre négatif de places géré correctement
+2025-10-20 11:02:14 - [INFO] - test_negative_places_booking PASSED
+2025-10-20 11:02:14 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:14 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:14 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:14 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:14 - [INFO] - Flask test client created
+2025-10-20 11:02:14 - [INFO] - ValueError correctement levée pour valeur non numérique
+2025-10-20 11:02:14 - [INFO] - test_non_numeric_places_booking PASSED
+2025-10-20 11:02:14 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:14 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:14 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:14 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:14 - [INFO] - Flask test client created
+2025-10-20 11:02:14 - [INFO] - test_index_page_loads PASSED
+2025-10-20 11:02:14 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:14 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:14 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:14 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:14 - [INFO] - Flask test client created
+2025-10-20 11:02:14 - [INFO] - test_index_contains_form PASSED
+2025-10-20 11:02:14 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:14 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:14 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:14 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:14 - [INFO] - Flask test client created
+2025-10-20 11:02:14 - [INFO] - test_show_summary_valid_email PASSED
+2025-10-20 11:02:14 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:14 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:14 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:14 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:14 - [INFO] - Flask test client created
+2025-10-20 11:02:14 - [INFO] - test_show_summary_invalid_email PASSED
+2025-10-20 11:02:14 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:14 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:14 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:14 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:14 - [INFO] - Flask test client created
+2025-10-20 11:02:14 - [INFO] - test_show_summary_empty_email PASSED
+2025-10-20 11:02:14 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:14 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:14 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:14 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:14 - [INFO] - Flask test client created
+2025-10-20 11:02:14 - [INFO] - test_show_summary_displays_points PASSED
+2025-10-20 11:02:14 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:14 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:14 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:14 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:14 - [INFO] - Flask test client created
+2025-10-20 11:02:14 - [INFO] - test_show_summary_displays_competitions PASSED
+2025-10-20 11:02:14 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:14 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:14 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:14 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:14 - [INFO] - Flask test client created
+2025-10-20 11:02:14 - [INFO] - test_book_page_valid_params PASSED
+2025-10-20 11:02:14 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:14 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:14 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:14 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:14 - [INFO] - Flask test client created
+2025-10-20 11:02:14 - [INFO] - test_book_page_displays_available_places PASSED
+2025-10-20 11:02:14 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:14 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:14 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:14 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:14 - [INFO] - Flask test client created
+2025-10-20 11:02:14 - [INFO] - test_book_page_invalid_club PASSED
+2025-10-20 11:02:14 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:14 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:14 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:15 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:15 - [INFO] - Flask test client created
+2025-10-20 11:02:15 - [INFO] - test_book_page_invalid_competition PASSED
+2025-10-20 11:02:15 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:15 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:15 - [INFO] - Flask test client created
+2025-10-20 11:02:15 - [INFO] - test_purchase_places_success PASSED
+2025-10-20 11:02:15 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:15 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:15 - [INFO] - Flask test client created
+2025-10-20 11:02:15 - [INFO] - test_purchase_places_deducts_points PASSED
+2025-10-20 11:02:15 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:15 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:15 - [INFO] - Flask test client created
+2025-10-20 11:02:15 - [INFO] - test_purchase_places_reduces_available_places PASSED
+2025-10-20 11:02:15 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:15 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:15 - [INFO] - Flask test client created
+2025-10-20 11:02:15 - [INFO] - test_purchase_places_not_enough_places PASSED
+2025-10-20 11:02:15 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:15 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:15 - [INFO] - Flask test client created
+2025-10-20 11:02:15 - [INFO] - test_purchase_places_not_enough_points PASSED
+2025-10-20 11:02:15 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:15 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:15 - [INFO] - Flask test client created
+2025-10-20 11:02:15 - [INFO] - test_purchase_places_invalid_club PASSED
+2025-10-20 11:02:15 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:15 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:15 - [INFO] - Flask test client created
+2025-10-20 11:02:15 - [INFO] - test_purchase_places_zero_places PASSED
+2025-10-20 11:02:15 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:15 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:15 - [INFO] - Flask test client created
+2025-10-20 11:02:15 - [INFO] - test_points_page_loads PASSED
+2025-10-20 11:02:15 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:15 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:15 - [INFO] - Flask test client created
+2025-10-20 11:02:15 - [INFO] - test_points_display_all_clubs PASSED
+2025-10-20 11:02:15 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:15 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:15 - [INFO] - Flask test client created
+2025-10-20 11:02:15 - [INFO] - test_points_page_public_access PASSED
+2025-10-20 11:02:15 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:15 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:15 - [INFO] - Flask test client created
+2025-10-20 11:02:15 - [INFO] - test_logout_redirects_to_index PASSED
+2025-10-20 11:02:15 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:15 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:15 - [INFO] - Flask test client created
+2025-10-20 11:02:15 - [INFO] - test_logout_with_follow_redirects PASSED
+2025-10-20 11:02:15 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:15 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:15 - [INFO] - Flask test client created
+2025-10-20 11:02:15 - [INFO] - test_index_page_loads PASSED
+2025-10-20 11:02:15 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:15 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:15 - [INFO] - Flask test client created
+2025-10-20 11:02:15 - [INFO] - test_show_summary_valid_email PASSED
+2025-10-20 11:02:15 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:15 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:15 - [INFO] - Flask test client created
+2025-10-20 11:02:15 - [INFO] - test_show_summary_invalid_email PASSED
+2025-10-20 11:02:15 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:15 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:15 - [INFO] - Flask test client created
+2025-10-20 11:02:15 - [INFO] - test_show_summary_empty_email PASSED
+2025-10-20 11:02:15 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:15 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:15 - [INFO] - Flask test client created
+2025-10-20 11:02:15 - [INFO] - test_book_page_valid_params PASSED
+2025-10-20 11:02:15 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:15 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:15 - [INFO] - Flask test client created
+2025-10-20 11:02:15 - [INFO] - test_book_page_invalid_club PASSED
+2025-10-20 11:02:15 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:15 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:15 - [INFO] - Flask test client created
+2025-10-20 11:02:15 - [INFO] - test_book_page_invalid_competition PASSED
+2025-10-20 11:02:15 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:15 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:15 - [INFO] - Flask test client created
+2025-10-20 11:02:15 - [INFO] - test_purchase_places_success PASSED
+2025-10-20 11:02:15 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:15 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:15 - [INFO] - Flask test client created
+2025-10-20 11:02:15 - [INFO] - test_purchase_places_not_enough_places PASSED
+2025-10-20 11:02:15 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:15 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:15 - [INFO] - Flask test client created
+2025-10-20 11:02:15 - [INFO] - test_purchase_places_not_enough_points PASSED
+2025-10-20 11:02:15 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:15 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:15 - [INFO] - Flask test client created
+2025-10-20 11:02:15 - [INFO] - test_purchase_places_invalid_club PASSED
+2025-10-20 11:02:15 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:15 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:15 - [INFO] - Flask test client created
+2025-10-20 11:02:15 - [INFO] - test_purchase_places_zero_places PASSED
+2025-10-20 11:02:15 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:15 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:15 - [INFO] - Flask test client created
+2025-10-20 11:02:15 - [INFO] - test_points_page_loads PASSED
+2025-10-20 11:02:15 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:15 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:15 - [INFO] - Flask test client created
+2025-10-20 11:02:15 - [INFO] - test_points_display_all_clubs PASSED
+2025-10-20 11:02:15 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:15 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:15 - [INFO] - Flask test client created
+2025-10-20 11:02:15 - [INFO] - test_logout_redirects_to_index PASSED
+2025-10-20 11:02:15 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:15 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:15 - [INFO] - Flask test client created
+2025-10-20 11:02:15 - [INFO] - test_logout_with_follow_redirects PASSED
+2025-10-20 11:02:15 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:15 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:15 - [INFO] - Flask test client created
+2025-10-20 11:02:15 - [INFO] - Step 1: Login successful
+2025-10-20 11:02:15 - [INFO] - Step 2: Booking page loaded
+2025-10-20 11:02:15 - [INFO] - Step 3: Purchase completed
+2025-10-20 11:02:15 - [INFO] - Step 4: Points page viewed
+2025-10-20 11:02:15 - [INFO] - Step 5: Logout successful
+2025-10-20 11:02:15 - [INFO] - test_complete_booking_workflow PASSED
+2025-10-20 11:02:15 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:15 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:15 - [INFO] - test_load_clubs_success PASSED
+2025-10-20 11:02:15 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:15 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:15 - [INFO] - test_load_clubs_empty_list PASSED
+2025-10-20 11:02:15 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:15 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:15 - [INFO] - test_load_clubs_file_not_found PASSED
+2025-10-20 11:02:15 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:15 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:15 - [INFO] - test_load_clubs_invalid_json PASSED
+2025-10-20 11:02:15 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:15 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:15 - [INFO] - test_load_competitions_success PASSED
+2025-10-20 11:02:15 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:15 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:15 - [INFO] - test_load_competitions_empty_list PASSED
+2025-10-20 11:02:15 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:15 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:15 - [INFO] - test_load_competitions_file_not_found PASSED
+2025-10-20 11:02:15 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:15 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:15 - [INFO] - test_load_competitions_invalid_json PASSED
+2025-10-20 11:02:15 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:15 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:15 - [INFO] - test_load_competitions_data_structure PASSED
+2025-10-20 11:02:15 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:15 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:15 - [INFO] - test_load_clubs_success PASSED
+2025-10-20 11:02:15 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:15 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:15 - [INFO] - test_load_clubs_empty_list PASSED
+2025-10-20 11:02:15 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:15 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:15 - [INFO] - test_load_clubs_file_not_found PASSED
+2025-10-20 11:02:15 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:15 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:15 - [INFO] - test_load_clubs_invalid_json PASSED
+2025-10-20 11:02:15 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:15 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:15 - [INFO] - test_load_clubs_data_structure PASSED
+2025-10-20 11:02:15 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:15 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:15 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:16 - [INFO] - test_load_competitions_success PASSED
+2025-10-20 11:02:16 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:16 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:16 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:16 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:16 - [INFO] - test_load_competitions_empty_list PASSED
+2025-10-20 11:02:16 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:16 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:16 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:16 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:16 - [INFO] - test_load_competitions_file_not_found PASSED
+2025-10-20 11:02:16 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:16 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:16 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:16 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:16 - [INFO] - test_load_competitions_invalid_json PASSED
+2025-10-20 11:02:16 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:16 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:16 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:16 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:16 - [INFO] - test_load_competitions_data_structure PASSED
+2025-10-20 11:02:16 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:16 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:16 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:16 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:16 - [INFO] - test_load_clubs_empty_list (unittest) PASSED
+2025-10-20 11:02:16 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:16 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:16 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:16 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:16 - [INFO] - test_load_clubs_file_not_found (unittest) PASSED
+2025-10-20 11:02:16 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:16 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:16 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:16 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:16 - [INFO] - test_load_clubs_invalid_json (unittest) PASSED
+2025-10-20 11:02:16 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:16 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:16 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:16 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:16 - [INFO] - test_load_clubs_success (unittest) PASSED
+2025-10-20 11:02:16 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:16 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:16 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:16 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:16 - [INFO] - test_load_competitions_data_structure (unittest) PASSED
+2025-10-20 11:02:16 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:16 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:16 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:16 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:16 - [INFO] - test_load_competitions_empty_list (unittest) PASSED
+2025-10-20 11:02:16 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:16 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:16 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:16 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:16 - [INFO] - test_load_competitions_file_not_found (unittest) PASSED
+2025-10-20 11:02:16 - [DEBUG] - Test data reset successfully
+2025-10-20 11:02:16 - [INFO] - Loaded 3 test clubs from fixtures
+2025-10-20 11:02:16 - [INFO] - Loaded 3 test competitions from fixtures
+2025-10-20 11:02:16 - [INFO] - Flask test app created successfully
+2025-10-20 11:02:16 - [INFO] - test_load_competitions_success (unittest) PASSED
+2025-10-20 11:02:16 - [DEBUG] - Test data reset successfully
